@@ -5,6 +5,9 @@ inputs:
     description: 'Runs any composer command in your actions'
     required: false
     default: help
+outputs:
+  composer-output:
+    description: 'The output of the docker command'
 runs:
   using: 'docker'
   image: 'Dockerfile'

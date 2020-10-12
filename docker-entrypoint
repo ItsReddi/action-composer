@@ -1,2 +1,2 @@
 #!/bin/sh
-composer $*
+echo "::set-output name=composer-output::$(composer $*)"
