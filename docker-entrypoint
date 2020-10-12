@@ -1,2 +1,6 @@
 #!/bin/sh
-echo "::set-output name=composer-output::$(composer $*)"
+composer $* > composer.out
+output="$(cat composer.out)"
+output="${output//$'\n'/\\n}"
+output="${output// / }"     # replace regular space with 'En Space'
+echo "::set-output name=composer-output::$output"
