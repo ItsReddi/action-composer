@@ -1,0 +1,15 @@
+name: 'composer-php'
+description: 'Runs composer'
+inputs:
+  action:
+    description: 'Runs any composer command in your actions'
+    required: false
+    default: help
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.action }}
+branding:
+    icon: 'package'
+    color: 'green'
