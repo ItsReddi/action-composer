@@ -8,6 +8,8 @@ inputs:
 outputs:
   composer-output:
     description: 'The output of the docker command'
+  composer-cache-dir:
+    description: 'Caching dir'
 runs:
   using: 'docker'
   image: 'Dockerfile'
