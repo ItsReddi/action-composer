@@ -3,5 +3,5 @@ composer $* > composer.out
 output="$(cat composer.out)"
 output="${output//$'\n'/\\n}"
 output="${output// / }"     # replace regular space with 'En Space'
-echo "::set-output name=composer-output::$output"
-echo "::set-output name=composer-cache-dir::$(composer config cache-dir)"
+echo "composer-output=$output" >> $GITHUB_OUTPUT
+echo "composer-cache-dir=$(composer config cache-dir)" >> $GITHUB_OUTPUT
